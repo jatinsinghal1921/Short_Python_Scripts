@@ -1,0 +1,38 @@
+If no error raised: Try->Else->Finally
+If error raised and exception captured : Try->Except->finally
+If error raised and no exception captured: Try->Finally->Program crash
+If error raised and exception captured and return statement in exception handler : Try->Exception block until return statement -> Finally ->return statement of exception handler. 
+
+Why and When else and finally is used?
+
+Lets understand this with an example...
+
+Traditional Approach
+
+try:
+-- Open File 
+-- Process File 
+-- Display modified File
+-- Close file object
+except:
+ -- Handle File Process Exceptions.
+ -- close file object
+ -- Exit current function
+
+
+Better way of writing above code
+
+try:
+ -- Open file
+ -- Process file
+except:
+ -- Handle File Processing Exceptions 
+ -- Exit from current Function
+else:
+ -- Display Modified File
+finally:
+ -- Close file object	
+
+
+
+
